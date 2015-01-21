@@ -35,25 +35,19 @@ service httpd restart
 
 cd /var/www
 #Download development kit
-wget http://www.fastcgi.com/dist/fcgi.tar.gz
-mkdir unzip
-cd /var/www
-tar -xf fcgi.tar.gz -C unzip
-cd ./unzip
-cd *
+http://www.fastcgi.com/dist/fcgi.tar.gz
 
-#configuring and make
-./configure
-cd ./include
-sed -i '34i\#include<cstdio>' fcgio.h
-cd ..
-make
-make install
+#1. unzip fcgi.tar.gz
+cd /var/www/fcgi/libfcgi
+#2. configure -> make -> make install
+
+#3. Change headfile of fcgio.cpp
+#add #include<stdio.h>
 
 #4. Add lib
-cd /etc
-echo "/usr/local/lib" >> ld.so.conf
-/sbin/ldconfig -v
+vim /etc/ld.so.conf
+#add /usr/local/lib
+/sbin/ldconfig –v
+#--------------------------------------------
+service httpd restart
 
-
-echo "DONE"

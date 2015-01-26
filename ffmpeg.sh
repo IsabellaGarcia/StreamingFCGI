@@ -27,8 +27,6 @@ make install
 make distclean
 echo "DONE YASM"
 
-
-
 #libx264
 cd $FF_DIR
 #create folder
@@ -48,8 +46,6 @@ make
 make install
 make distclean
 echo "DONE LIBX264"
-
-
 
 #libfdk_aac
 cd $FF_DIR
@@ -72,8 +68,6 @@ make install
 make distclean
 echo "DONE LIBFDK_AAC"
 
-
-
 #libmp3lame
 cd $FF_DIR
 #create folder
@@ -92,9 +86,6 @@ make
 make install
 make distclean
 echo "DONE libmp3lame"
-
-
-
 
 #libopus
 cd $FF_DIR
@@ -115,8 +106,6 @@ make install
 make distclean
 echo "DONE libopus"
 
-
-
 #libogg
 cd $FF_DIR
 #create folder
@@ -135,9 +124,6 @@ make
 make install
 make distclean
 echo "DONE libogg"
-
-
-
 
 #libvorbis
 cd $FF_DIR

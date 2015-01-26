@@ -84,4 +84,3 @@ rm -rf unzip
 service httpd restart
 
 echo "DONE"
-exit #

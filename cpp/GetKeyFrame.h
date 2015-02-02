@@ -1,5 +1,14 @@
+/* Author: Xinyi HUANG
+ * Date: 30/01/2015
+ * Description: Class Declaration for getting keyframe
+ *              Max duration: 4hours
+ * parameter: input.mp4 interval
+ */
+
 #ifndef GETKEYFRAME_H
 #define GETKEYFRAME_H
+#include <boost/algorithm/string.hpp>
+#include<boost/algorithm/string/split.hpp>    
 #include<math.h>
 #include<vector>
 #include<stdlib.h>
@@ -13,7 +22,7 @@ using namespace std;
 
 #define BUFSIZE 2048
 #define MAXTIME 14400
-//namespace StreamphonyVoD{
+namespace StreamphonyVoD{
     class GetKeyFrame{
          public:
 	     GetKeyFrame(const char*, int);  //constructor
@@ -28,5 +37,5 @@ using namespace std;
 	     int _interval;
 	     int _total_time;
     };
-//}
+}
 #endif

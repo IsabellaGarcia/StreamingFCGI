@@ -2,7 +2,7 @@
 
 #Author : Xinyi HUANG
 
-echo "FCGI environment for CentOS/RHEL 6 64bit\n\n\n"
+echo "FCGI environment for CentOS/RHEL 6 64bit"
 #--------------------------------------------
 #Yum library
 echo "Adding RPMForge Repository\n"
@@ -21,7 +21,7 @@ rpm -Uvh http://centos.alt.ru/repository/centos/6/x86_64/centalt-release-6-1.noa
 
 #--------------------------------------------
 #Install Apache2
-echo "Installing Apache2\n\n\n"
+echo "Installing Apache2"
 yum install httpd
 
 
@@ -39,9 +39,19 @@ DOWNLOAD_DIR=/var/www
 
 cd $DOWNLOAD_DIR
 #Download development kit
-echo "Development Kit for C++/Java\n\n\n"
+echo "Development Kit for C++/Java"
+if [ -e "./fcgi.tar.gz" ]; then
+    rm -rf ./fcgi.tar.gz
+fi
+
 wget http://www.fastcgi.com/dist/fcgi.tar.gz
-mkdir unzip
+
+if [ -d "./unzip" ]; then
+   echo "unzip file exist"
+   rm -rf unzip
+fi
+   mkdir unzip
+
 cd $DOWNLOAD_DIR
 tar -xf fcgi.tar.gz -C unzip
 cd ./unzip
@@ -74,4 +84,3 @@ rm -rf unzip
 service httpd restart
 
 echo "DONE"
-exit #
